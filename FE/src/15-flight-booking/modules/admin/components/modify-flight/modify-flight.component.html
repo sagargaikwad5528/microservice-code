@@ -1,0 +1,152 @@
+<h3>Modify flight</h3>
+<div style="padding: 30px;">
+    <form [formGroup]="modifyFlight"   (submit)="testmodify()">
+        
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">ID: </label>
+            <input type="text" (change)="callFlightByID()" class="form-control" formControlName="id" id="id" required name="id">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['id'].dirty">
+                    <span *ngIf="modifyFlight.controls['id'].invalid">ID can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Name: </label>
+            <input type="text" class="form-control" formControlName="name" id="name" required name="name">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['name'].dirty">
+                    <span *ngIf="modifyFlight.controls['name'].invalid">Name can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Flight Number: </label>
+            <input type="text" class="form-control" formControlName="flightnumber" id="flightnumber" required name="flightnumber">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['flightnumber'].dirty">
+                    <span *ngIf="modifyFlight.controls['flightnumber'].invalid">Flight Number can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Price: </label>
+            <input type="text" class="form-control" formControlName="price" id="price" required name="price">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['price'].dirty">
+                    <span *ngIf="modifyFlight.controls['price'].invalid">price can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Start Date Time: </label>
+            <input type="text" class="form-control" formControlName="startdateTime" id="startdateTime" required name="startdateTime">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['startdateTime'].dirty">
+                    <span *ngIf="modifyFlight.controls['startdateTime'].invalid">Start Date can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">End Date Time: </label>
+            <input type="text" class="form-control" formControlName="enddateTime" id="enddateTime" required name="enddateTime">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['enddateTime'].dirty">
+                    <span *ngIf="modifyFlight.controls['enddateTime'].invalid">To Date can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">From: </label>
+            <input type="text" class="form-control" formControlName="fromdesg" id="fromdesg" required name="fromdesg">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['fromdesg'].dirty">
+                    <span *ngIf="modifyFlight.controls['fromdesg'].invalid">From can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">To : </label>
+            <input type="text" class="form-control" formControlName="todesg" id="todesg" required name="todesg">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['todesg'].dirty">
+                    <span *ngIf="modifyFlight.controls['todesg'].invalid">To can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Number rows: </label>
+            <input type="text" class="form-control" formControlName="noofrows" id="noofrows" required name="noofrows">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['noofrows'].dirty">
+                    <span *ngIf="modifyFlight.controls['noofrows'].invalid">Number of rows can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4" >
+            <label style="font-style: italic; font-size: 18px; ">Instrument Type : </label>
+            <select  formControlName="instrument"  id="instrument" required name="instrument">
+                <option selected>A360</option>
+                <option >A360</option>
+                <option >B747</option>
+            </select>
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Schedule days: </label>
+            <select  formControlName="schedule"  id="schedule" required name="schedule">
+                <option selected>Daily</option>
+                <option >Weekly</option>
+                <option >Week Days</option>
+                <option >Week Ends</option>
+                <option >Mon</option>
+                <option >Tue</option>
+                <option >Wed</option>
+                <option >Thu</option>
+                <option >Fri</option>
+                <option >Sat</option>
+                <option >Sun</option>
+            </select>
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Meal Type : </label>
+            <select  formControlName="mealtype"  id="mealtype" required name="mealtype">
+                <option selected>None</option>
+                <option >Veg</option>
+                <option >Non-Veg</option>
+            </select>
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Business class Seats: </label>
+            <input type="text" class="form-control" formControlName="businessclassseats" id="businessclassseats" required name="businessclassseats">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['businessclassseats'].dirty">
+                    <span *ngIf="modifyFlight.controls['businessclassseats'].invalid">Business Class Seats can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Non-Business class Seats: </label>
+            <input type="text" class="form-control" formControlName="nonbusinessclassseats" id="nonbusinessclassseats" required name="nonbusinessclassseats">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['nonbusinessclassseats'].dirty">
+                    <span *ngIf="modifyFlight.controls['nonbusinessclassseats'].invalid">Business Class Seats can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Status : </label>
+            <input type="text" class="form-control" formControlName="status" id="status" required name="status">
+            <div>
+                <span class="error-message" *ngIf="modifyFlight.controls['status'].dirty">
+                    <span *ngIf="modifyFlight.controls['status'].invalid">Status can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+
+        <div class="row"></div>
+        <div class="col-sm-4">
+            <button class="btn btn-success" [disabled]="modifyFlight.invalid">Update</button>
+        </div>
+    </form>
+</div>

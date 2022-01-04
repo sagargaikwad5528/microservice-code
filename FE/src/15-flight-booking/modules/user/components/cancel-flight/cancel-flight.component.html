@@ -1,0 +1,19 @@
+<h3>Cancel flight</h3>
+<div style="padding: 30px;">
+    <form [formGroup]="cancelFlight"   (submit)="cancelFlights()">
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">PNR number : </label>
+            <input type="text"  class="form-control" formControlName="pnr" id="pnr" required name="pnr">
+            <div>
+                <span class="error-message" *ngIf="cancelFlight.controls['pnr'].dirty">
+                    <span *ngIf="cancelFlight.controls['pnr'].invalid">ID can not be empty<br/></span>
+                </span>
+            </div> 
+        </div> 
+
+        <div class="row"></div>
+        <div class="col-sm-4">
+            <button class="btn btn-success" [disabled]="cancelFlight.invalid">Cancel</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<h1>Count: {{count}}</h1>
+
+<button (click)="increase()">Increase</button>
+
+<button (click)="decrease()">Decrease</button>
+
+<hr/>
+
+<h1>Name: <mark>{{name}}</mark></h1>
+
+<input #nameEle /> <button (click)="doChange(nameEle.value);nameEle.value=''">Change</button>
+
+
+<hr/>
+<h1>Name: <mark>{{name}}</mark></h1>
+<input #nameEle2 [value]="name" (keyup)="doChange(nameEle2.value);" />
+
+
+<hr/>
+<input [(ngModel)]="name" />
+

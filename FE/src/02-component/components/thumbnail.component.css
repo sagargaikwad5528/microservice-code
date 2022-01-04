@@ -1,0 +1,16 @@
+
+img{
+    border-radius: 10px;
+    width: 100%;
+}
+h3{
+    color: blue;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    font-size: 12px;
+    text-shadow: 2px 2px 5px black;
+}

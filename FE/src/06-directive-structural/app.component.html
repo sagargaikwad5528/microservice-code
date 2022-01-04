@@ -1,0 +1,26 @@
+<h1>Structural Directives</h1>
+
+<h2 *ngIf="books.length<1">We have not found any data in database</h2>
+
+<table *ngIf="books.length>0" border="1">
+    <thead>
+        <tr>
+            <th>S.No</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Price</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{book.id}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.rating}}</td>
+        </tr>
+    </tbody>
+</table>

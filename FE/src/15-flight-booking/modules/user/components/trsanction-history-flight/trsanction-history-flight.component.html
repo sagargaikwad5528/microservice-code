@@ -1,0 +1,35 @@
+<h3>Transacion History flight</h3> 
+
+<div >
+
+    <table>
+        <thead>
+            <tr><td>ID</td><td>Name</td><td>Price</td>
+                <td>Number of adult</td>
+                <td>Number of  child</td>
+                <td>Name of adults </td>
+                <td>Name of children</td>
+                <td>PNR Number</td>
+                <td>From</td><td>To</td>
+                <td>Status</td>
+                <td>Date Time</td>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let group of flightList">
+                <tr><td><h6>{{group.id}}</h6></td>
+                    <td><h6>{{group.userName}}</h6></td>
+                    <td><h6>{{group.price}}</h6></td>
+                    <td><h6>{{group.noOfAdult}}</h6></td>
+                    <td><h6>{{group.noOfChild}}</h6></td>
+                    <td><h6>{{group.nameOfAdults}}</h6></td>
+                    <td><h6>{{group.nameOfChild}}</h6></td>
+                    <td><h6>{{group.pnr}}</h6></td>
+                    <td><h6>{{group.fromdesg}}</h6></td>
+                    <td><h6>{{group.todesg}}</h6></td>
+                    <td><h6>{{group.status}}</h6></td>
+                    <td><h6>{{group.dateTime}}</h6></td></tr> 
+                </ng-container>
+            </tbody>
+   </table>
+</div>

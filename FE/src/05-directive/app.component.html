@@ -1,0 +1,16 @@
+<h2>Attribute Directives</h2>
+<ul>
+    <li>This is first list</li>
+    <li class="success">This is second list</li>
+    <li [ngClass]="myClass">This is third list</li>
+    <li [ngClass]="flag?'error':'success'">This is fourth list</li>
+    <li [ngClass]="flag?'success':''">This is fifth list</li>
+</ul>
+<hr/>
+<ul>
+    <li>This is first list</li>
+    <li style="color:blue;font-size:2em">This is second list</li>
+    <li [ngStyle]="myStyle">ABC</li>
+</ul>
+
+<button (click)="toggle()">Flag: {{flag}}</button>

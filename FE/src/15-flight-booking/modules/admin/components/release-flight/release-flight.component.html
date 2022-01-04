@@ -1,0 +1,17 @@
+<div style="padding: 30px;">
+    <form [formGroup]="releaseFlight"   (submit)="testrelease()">
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Enter Flight ID to Release: </label>
+            <input type="text" class="form-control" formControlName="id" id="id" required name="id">
+            <div>
+                <span class="error-message" *ngIf="releaseFlight.controls['id'].dirty">
+                    <span *ngIf="releaseFlight.controls['id'].invalid">ID can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div class="row"></div>
+        <div class="col-sm-4">
+            <button class="btn btn-success" [disabled]="releaseFlight.invalid">RELEASE</button>
+        </div>
+    </form>
+</div>

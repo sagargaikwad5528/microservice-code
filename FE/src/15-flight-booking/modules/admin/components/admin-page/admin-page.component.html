@@ -1,0 +1,35 @@
+    <div style="color: rgb(78, 172, 16);">
+        <h1>Administrator Cosole</h1>
+    <a [routerLink]="['add']">Add Flight</a> |
+    <a routerLink="remove">Remove Flight</a> |
+    <a routerLink="modify">Modify Flight</a> |
+    <a routerLink="block">Block Flight</a> |
+    <a routerLink="release">Release Flight</a> |
+    <a style="text-align: center;" routerLink="/login">Log Out</a> |
+    </div>
+
+    <div >
+
+        <table>
+            <thead>
+                <tr><td>ID</td><td>Name</td><td>Price</td><td>Status</td><td>From</td><td>To</td><td>Start Date Time</td><td>End Date Time</td></tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let group of flightList">
+                    <tr><td><h6>{{group.id}}</h6></td>
+                        <td><h6>{{group.name}}</h6></td>
+                        <td><h6>{{group.price}}</h6></td>
+                        <td><h6>{{group.status}}</h6></td>
+                        <td><h6>{{group.fromdesg}}</h6></td>
+                        <td><h6>{{group.todesg}}</h6></td>
+                        <td><h6>{{group.startdateTime}}</h6></td> 
+                        <td><h6>{{group.enddateTime}}</h6></td></tr> 
+                    </ng-container>
+                </tbody>
+       </table>
+    </div>
+
+    <div >
+        <router-outlet></router-outlet>
+    </div>
+    

@@ -1,0 +1,27 @@
+<div style="padding: 30px;">
+    <form [formGroup]="logincheck"   (submit)="getLogin()">
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">User Name : </label>
+            <input type="text" class="form-control" formControlName="username" id="username" required name="username">
+            <div>
+                <span class="error-message" *ngIf="logincheck.controls['username'].dirty">
+                    <span *ngIf="logincheck.controls['username'].invalid">Username can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div class="row"></div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px;">Password : </label>
+            <input type="password" class="form-control" formControlName="password"  id="password" required name="password">
+            <div>
+            <span class="error-message" *ngIf="logincheck.controls['password'].dirty">
+                <span *ngIf="logincheck.controls['password'].invalid">Password can not be empty<br/></span>
+            </span>
+            </div>
+        </div>
+        <div class="row"></div>
+        <div class="col-sm-4">
+            <button class="btn btn-success" [disabled]="logincheck.invalid">Login</button>
+        </div>
+    </form>
+</div>

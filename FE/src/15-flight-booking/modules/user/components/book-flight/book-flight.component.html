@@ -1,0 +1,133 @@
+<h3>Book flight</h3>
+<div style="padding: 30px;">
+    <form [formGroup]="bookFlight"   (submit)="bookFlights()">
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Flight ID: </label>
+            <input type="text"  (change)="callFlightByID()"  class="form-control" formControlName="flightId" id="flightId" required name="flightId">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['flightId'].dirty">
+                    <span *ngIf="bookFlight.controls['flightId'].invalid">ID can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Flight Name: </label>
+            <input type="text"  (change)="callFlightByID()"  class="form-control" formControlName="flightName" id="flightName" required name="flightName">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['flightName'].dirty">
+                    <span *ngIf="bookFlight.controls['flightName'].invalid">flightName can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Price: </label>
+            <input type="text" class="form-control" formControlName="price" id="price" required name="price">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['price'].dirty">
+                    <span *ngIf="bookFlight.controls['price'].invalid">Price can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Date: </label>
+            <input type="text" class="form-control" formControlName="dateTime" id="dateTime" required name="dateTime">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['dateTime'].dirty">
+                    <span *ngIf="bookFlight.controls['dateTime'].invalid">Date can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">From: </label>
+            <input type="text" class="form-control" formControlName="fromdesg" id="fromdesg" required name="fromdesg">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['fromdesg'].dirty">
+                    <span *ngIf="bookFlight.controls['fromdesg'].invalid">From can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">To : </label>
+            <input type="text" class="form-control" formControlName="todesg" id="todesg" required name="todesg">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['todesg'].dirty">
+                    <span *ngIf="bookFlight.controls['todesg'].invalid">To can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Email : </label>
+            <input type="text" class="form-control" formControlName="email" id="email" required name="email">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['email'].dirty">
+                    <span *ngIf="bookFlight.controls['email'].invalid">E-mail can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Age : </label>
+            <input type="text" class="form-control" formControlName="age" id="age" required name="age">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['age'].dirty">
+                    <span *ngIf="bookFlight.controls['age'].invalid">Age can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+         
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Number of adults : </label>
+            <input type="text" class="form-control" formControlName="noOfAdult" id="noOfAdult" required name="noOfAdult">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['noOfAdult'].dirty">
+                    <span *ngIf="bookFlight.controls['noOfAdult'].invalid">Number of adults can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Number of children : </label>
+            <input type="text" class="form-control" formControlName="noOfChild" id="noOfChild" required name="noOfChild">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['noOfChild'].dirty">
+                    <span *ngIf="bookFlight.controls['noOfChild'].invalid">Number of children can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Name of passangers : </label>
+            <input type="text" class="form-control" formControlName="nameOfAdults" id="nameOfAdults" required name="nameOfAdults">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['nameOfAdults'].dirty">
+                    <span *ngIf="bookFlight.controls['nameOfAdults'].invalid">Passangers can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Children Names : </label>
+            <input type="text" class="form-control" formControlName="nameOfChild" id="nameOfChild" required name="nameOfChild">
+            <div>
+                <span class="error-message" *ngIf="bookFlight.controls['nameOfChild'].dirty">
+                    <span *ngIf="bookFlight.controls['nameOfChild'].invalid">Children Name can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Trip Type : </label>
+            <select  formControlName="tripType"  id="tripType" required name="tripType">
+                <option selected>One Way Trip</option>
+                <option >Round Trip</option>
+            </select>
+        </div>
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Meal Type : </label>
+            <select  formControlName="mealType"  id="mealType" required name="mealType">
+                <option selected>Veg</option>
+                <option >Non-Veg</option>
+            </select>
+        </div>
+
+        <div class="row"></div>
+        <div class="col-sm-4">
+            <button class="btn btn-success"  [disabled]="bookFlight.invalid">Book</button>
+        </div>
+    </form>
+</div>

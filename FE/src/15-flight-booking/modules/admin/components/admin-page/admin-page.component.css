@@ -1,0 +1,18 @@
+table, th , td  {
+    border: 1px solid rgb(76, 113, 124);
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  table tr:nth-child(odd) {
+    background-color: #c0bfbf;
+  }
+  table tr:nth-child(even) {
+    background-color: #ffffff;
+  }
+
+  a{
+    font-size: 18px;
+    color: 1px solid rgb(76, 113, 124);
+    background-color: aqua;
+  }
+   

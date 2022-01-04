@@ -1,0 +1,24 @@
+<ul>
+    <li>password.valid: {{loginForm.controls["password"].valid}}</li>
+    <li>password.invalid: {{loginForm.controls["password"].invalid}}</li>
+    <li>password.dirty: {{loginForm.controls['password'].dirty}}</li>
+    <li>password.pristine: {{loginForm.controls["password"].pristine}}</li>
+    <li>password.errors: {{loginForm.controls["password"].errors|json}}</li>
+</ul>
+
+<form [formGroup]="loginForm" (submit)="getLogin()">
+    Username: <input type="text" formControlName="username" placeholder="Enter username" />
+    <br/>
+    <span class="error-message" *ngIf="loginForm.controls['username'].dirty">
+        <span *ngIf="loginForm.controls['username'].invalid">Username can not be empty<br/></span>
+    </span>
+
+    Password: <input type="text" formControlName="password" placeholder="Enter password" />
+    <br/>
+    <span class="error-message" *ngIf="loginForm.controls['password'].dirty && loginForm.controls['password'].errors!=null">
+        <span *ngIf="loginForm.controls['password'].errors['required']">password can not be empty<br/></span>
+        <span *ngIf="!!loginForm.controls['password'].errors['minlength']">Mininum 5 chars are required<br/></span>
+        <span *ngIf="!!loginForm.controls['password'].errors['maxlength']">Maxinum 8 chars are required<br/></span>
+    </span>
+    <button [disabled]="loginForm.invalid">Login</button>
+</form>

@@ -1,0 +1,17 @@
+<div style="padding: 30px;">
+    <form [formGroup]="blockFlight"   (submit)="testBlock()">
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Enter Flight ID to block: </label>
+            <input type="text" class="form-control" formControlName="id" id="id" required name="id">
+            <div>
+                <span class="error-message" *ngIf="blockFlight.controls['id'].dirty">
+                    <span *ngIf="blockFlight.controls['id'].invalid">ID can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div class="row"></div>
+        <div class="col-sm-4">
+            <button class="btn btn-success" [disabled]="blockFlight.invalid">BLOCK</button>
+        </div>
+    </form>
+</div>

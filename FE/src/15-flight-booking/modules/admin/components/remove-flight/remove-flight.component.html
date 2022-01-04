@@ -1,0 +1,17 @@
+<div style="padding: 30px;">
+    <form [formGroup]="removeFlight"   (submit)="testremove()">
+        <div  class="col-sm-4">
+            <label style="font-style: italic; font-size: 18px; ">Enter Flight ID to remove: </label>
+            <input type="text" class="form-control" formControlName="id" id="id" required name="id">
+            <div>
+                <span class="error-message" *ngIf="removeFlight.controls['id'].dirty">
+                    <span *ngIf="removeFlight.controls['id'].invalid">ID can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div class="row"></div>
+        <div class="col-sm-4">
+            <button class="btn btn-success" [disabled]="removeFlight.invalid">REMOVE</button>
+        </div>
+    </form>
+</div>

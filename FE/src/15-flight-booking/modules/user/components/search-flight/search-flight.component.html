@@ -1,0 +1,65 @@
+<h3>Search flight</h3>
+<div style="padding: 20px;">
+    <form [formGroup]="searchFlight"   (submit)="searchFlights()">
+        
+        <div  class="col-sm-3">
+            <label style="font-style: italic; font-size: 18px; ">Date: </label>
+            <input type="text" class="form-control" formControlName="dateTime" id="dateTime" required name="dateTime">
+            <div>
+                <span class="error-message" *ngIf="searchFlight.controls['dateTime'].dirty">
+                    <span *ngIf="searchFlight.controls['dateTime'].invalid">Date can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-3">
+            <label style="font-style: italic; font-size: 18px; ">From: </label>
+            <input type="text" class="form-control" formControlName="fromdesg" id="fromdesg" required name="fromdesg">
+            <div>
+                <span class="error-message" *ngIf="searchFlight.controls['fromdesg'].dirty">
+                    <span *ngIf="searchFlight.controls['fromdesg'].invalid">From can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div  class="col-sm-3">
+            <label style="font-style: italic; font-size: 18px; ">To : </label>
+            <input type="text" class="form-control" formControlName="todesg" id="todesg" required name="todesg">
+            <div>
+                <span class="error-message" *ngIf="searchFlight.controls['todesg'].dirty">
+                    <span *ngIf="searchFlight.controls['todesg'].invalid">To can not be empty<br/></span>
+                </span>
+            </div> 
+        </div>
+        <div></div>
+
+        <div class="col-sm-3">
+            <button class="btn btn-success"  [disabled]="searchFlight.invalid">Search</button>
+        </div>
+    </form>
+</div>
+
+<div class="row"></div>
+
+
+<div >
+
+    <table>
+        <thead>
+            <tr><td>ID</td><td>Name</td><td>Price</td><td>adult</td><td>From</td><td>To</td>
+                <td>Status</td>
+                <td>Date Time</td>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let group of flightList">
+                <tr><td><h6>{{group.id}}</h6></td>
+                    <td><h6>{{group.name}}</h6></td>
+                    <td><h6>{{group.price}}</h6></td>
+                    <td><h6>{{group.adult}}</h6></td>
+                    <td><h6>{{group.fromdesg}}</h6></td>
+                    <td><h6>{{group.todesg}}</h6></td>
+                    <td><h6>{{group.status}}</h6></td>
+                    <td><h6>{{group.startdateTime}}</h6></td></tr> 
+                </ng-container>
+            </tbody>
+   </table>
+</div>

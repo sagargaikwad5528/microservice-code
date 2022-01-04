@@ -1,0 +1,10 @@
+h1{
+    text-align: center;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+}
+
+p.first{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
